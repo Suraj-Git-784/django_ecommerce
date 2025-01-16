@@ -5,6 +5,13 @@
     <title>Template is working</title>
 </head>
 <body>
-Testing {{ name }}
+<h1>Text analyzer. Enter your text below</h1>
+
+<form action="/removepunc" method="get">
+ <textarea style='width: 1221px; height: 122px;'></textarea><br>
+
+    <input type="checkbox" name="analyze" /> Remove Punctuation <br>
+    <button type="submit">Analyze Text</button>
+</form>
 </body>
 </html>

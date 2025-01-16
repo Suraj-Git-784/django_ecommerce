@@ -2,12 +2,15 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def index(request):
-    params = {'name': 'harry', 'place': 'Mars'}
-    return render(request, 'index.html', params)
+    return render(request, 'index.html')
     # return HttpResponse('Hello')
 
-def removepunc(request):
-    return HttpResponse("remove punc")
+def analyze(request):
+    djtext = request.GET.get('analyze', 'default')
+    print(djtext)
+    analyzed = djtext
+    params = {'purpose': 'Remove Punctuation', 'analyzed_text' : analyzed}
+    return render(request, 'analyze.html', params)
 
 def capfirst(request):
     return HttpResponse('Capitalize this')
